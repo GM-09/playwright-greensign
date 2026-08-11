@@ -6,16 +6,16 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 // Installs your project's node modules
-                sh 'npm ci'
+                bat 'npm ci'
                 // Installs the Playwright browsers and their operating system dependencies
-                sh 'npx playwright install --with-deps'
+                bat 'npx playwright install --with-deps'
             }
         }
 
         stage('Run Tests') {
             steps {
                 // Runs your Playwright test suite
-                sh 'npx playwright test'
+                bat 'npx playwright test'
             }
         }
     }
