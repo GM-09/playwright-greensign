@@ -2,6 +2,13 @@ pipeline {
     // Defines where the pipeline runs. 'any' means it runs on any available Jenkins agent.
     agent any
 
+    // This block replaces your local .env file for the Jenkins run
+    environment {
+        BASE_URL = 'https://test-4.greensign.ai/'
+        USER_EMAIL = 'ghulam_gs@proton.me'
+        USER_PASSWORD = 'Mustafa@test4'
+    }
+
     stages {
         stage('Install Dependencies') {
             steps {
